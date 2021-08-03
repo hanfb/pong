@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <style>
+            @import url(style.css);
+            p.highlight {
+                color: red;
+            }
+            svg {
+                background-color: rgb(41, 41, 36);
+            }
+        </style>
+        <script src="./dist/pong.js"></script>
+    </head>
+    <body>
+        <style>
+            .hidden { visibility: hidden; }
+            .score { font: 50px sans-serif; fill: white; }
+            .gamewin {
+                font-family:sans-serif;
+                font-size:80px;
+                fill:green;
+            }
+            .gamelose {
+                font-family:sans-serif;
+                font-size:80px;
+                fill:red;
+            }
+        </style>
+        <h1>Pong</h1>
+        <svg id="canvas" width="600" height="600">
+            <g id="player" transform="translate(75,300)">
+              <rect width = "10" height = "50" fill = "white"/> 
+            </g>
+            <g id="computer" transform="translate(525,300)">
+                <rect width = "10" height = "50" fill = "white"/> 
+            </g>
+            <g id="ball" transform="translate(300,200)">
+                <circle cx= "5" cy = "5" r = "5" fill = "white"/> 
+            </g>
+            <text id = "playerScore" x='200' y='100' class= 'score'>0</text>
+            <text id = "computerScore" x='375' y='100' class= 'score'>0</text>
+            <text id = "gameWin" x='150' y='300' class = 'gamewin hidden'>You Win</text>
+            <text id = "gameLose" x='150' y='300' class = 'gamelose hidden'>You Lose</text>
+            <line x1="300" y1="20" x2="300" y2="580" stroke="white" stroke-dasharray="10"/> 
+        </svg>
+        <div id="controls">
+            <h2>Controls:</h2>
+            <table>
+                <!-- <tr><td>Thrust</td><td>Up Arrow</td></tr> -->
+                <tr><td>Move Up</td><td><div id="ArrowUp" class="key">&#8679;</div></td></tr>
+                <tr><td>Move Down</td><td><div id="ArrowDown" class="key">&#8681;</div></td></tr>
+                <tr><td>Restart</td><td><div id="Space" class="text">Space Bar</div></td></tr>
+            </table>
+            </div>
+    </body>
+</html>
